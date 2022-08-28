@@ -1,5 +1,5 @@
-player1 = 0;
-player2 = 0;
+let player1 = 0;
+let player2 = 0;
 
 function getComputerChoice() {
 
