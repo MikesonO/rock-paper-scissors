@@ -1,5 +1,7 @@
 let player1 = 0;
 let player2 = 0;
+let playerSelection = null;
+let computerSelection = null;
 
 function getComputerChoice() {
 
@@ -28,9 +30,6 @@ function getPlayerChoice(playerChoice = prompt("Rock, Paper or Scissors?").toLow
   }
 
 }
-
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
 
 function playRound(Player1, Player2) {
 
@@ -64,6 +63,24 @@ function playRound(Player1, Player2) {
 
 }
 
-console.log(playRound(playerSelection, computerSelection));
-console.log (player1);
-console.log (player2);
+function game(){
+  for (var i = 0; i < 5; i++){
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    console.log(playRound(i));
+    console.log(`Player 1 score: ${player1}`);
+    console.log(`Player 2 score: ${player2}`);
+  }
+
+  
+  if(player1 > player2){
+    console.log("You win the game!");
+  } else if (player2 > player1){
+    console.log("You lose the game!");
+  } else {
+    console.log("No Contest!");
+  }
+}
+
+game();
+
