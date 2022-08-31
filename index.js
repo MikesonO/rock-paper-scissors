@@ -1,3 +1,4 @@
+//Variables
 let player1 = 0;
 let player2 = 0;
 let round = 1;
@@ -8,9 +9,8 @@ const restart = document.querySelector("#restart-btn");
 let player1Score = document.querySelector("#player1");
 let player2Score = document.querySelector("#player2");
 
-
+//Gets Player 2 Choice (Computer)
 function getComputerChoice() {
-
   let randomChoice = Math.floor(Math.random() * 3) + 1;
 
   if (randomChoice === 1) {
@@ -22,6 +22,7 @@ function getComputerChoice() {
   }
 }
 
+//Rock, Paper, Scissor Buttons
 option.forEach(button => {
   button.addEventListener("click", () => {
     playerSelection = button.id;
@@ -38,11 +39,12 @@ option.forEach(button => {
   })
 });
 
+//Plays 1 Round and Increments Player Score
 function playRound(Player1, Player2) {
 
   if (playerSelection == computerSelection) {
     return "Tie!"
-  } else if (playerSelection == "rock") { //Player1 - ROCK
+  } else if (playerSelection == "rock") { //Player1 - Rock
     if (computerSelection == "paper") {
       player2++;
       return "You Lose! Paper beats Rock"
@@ -50,7 +52,7 @@ function playRound(Player1, Player2) {
       player1++;
       return "You Win! Rock beats Scissors"
     }
-  } else if (playerSelection == "paper") { //Player1 - PAPER
+  } else if (playerSelection == "paper") { //Player1 - Paper
     if (computerSelection == "rock") {
       player1++;
       return "You Win! Paper beats Rock"
@@ -58,7 +60,7 @@ function playRound(Player1, Player2) {
       player2++;
       return "You Lose! Scissors beats Paper"
     }
-  } else if (playerSelection == "scissors") { //Player1 - SCISSORS
+  } else if (playerSelection == "scissors") { //Player1 - Scissors
     if (computerSelection == "rock") {
       player2++;
       return "You Lose! Rock beats Scissors"
@@ -70,7 +72,7 @@ function playRound(Player1, Player2) {
 }
 
 //Restart Button
-restart.addEventListener("click", () =>{
+restart.addEventListener("click", () => {
   player1 = 0;
   player2 = 0;
   round = 1;
@@ -78,43 +80,36 @@ restart.addEventListener("click", () =>{
   player2Score.textContent = "Computer Score: 0";
   option.forEach(button => {
     button.disabled = false;
-})
+  })
 
 });
 
-function editScore(){
+//Edits The Score Text
+function editScore() {
   player1Score.textContent = `Player Score: ${player1}`
   player2Score.textContent = `Computer Score: ${player2}`
 }
 
+//Disables Buttons
 function disableOption() {
   option.forEach(button => {
-      button.disabled = true
+    button.disabled = true
   })
 }
 
+//Main Game Function
 function game() {
-  if (player1 )
+  if (player1)
 
-  console.log(`Round ${round++}`);
+    console.log(`Round ${round++}`);
   console.log(playRound(playerSelection, computerSelection));
   editScore();
 
-  if (player1 === 5){
+  if (player1 === 5) {
     console.log("You win the game!");
     disableOption();
-  } else if (player2 === 5){
+  } else if (player2 === 5) {
     disableOption();
-    console.log ("You lose the game!");
-  } 
-
-
-
-  // if (player1 > player2) {
-  //   console.log("You win the game!");
-  // } else if (player2 > player1) {
-  //   console.log("You lose the game!");
-  // } else {
-  //   console.log("No Contest!");
-  // }
+    console.log("You lose the game!");
+  }
 }
