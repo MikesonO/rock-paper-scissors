@@ -23,14 +23,13 @@ option.forEach(button => {
   button.addEventListener("click", () => {
     playerSelection = button.id;
     if (playerSelection === "rock") {
-      console.log("rock");
+      playerSelection = "rock";
     } else if (playerSelection === "paper") {
-      console.log("paper");
+      playerSelection = "paper";
     } else if (playerSelection === "scissors") {
-      console.log("scissors");
+      playerSelection = "scissors";
     }
     computerSelection = getComputerChoice();
-    console.log(computerSelection);
 
     game();
   })
@@ -72,12 +71,18 @@ function gameReset(){
   player2 = 0;
   round = 1;
 }
+function editScore(){
+  let player1Score = document.querySelector("#player1");
+  let player2Score = document.querySelector("#player2");
+  player1Score.textContent = `Player Score: ${player1}`
+  player2Score.textContent = `Computer Score: ${player2}`
+}
+
 
 function game() {
   console.log(`Round ${round++}`);
   console.log(playRound(playerSelection, computerSelection));
-  console.log(`Player 1 score: ${player1}`);
-  console.log(`Player 2 score: ${player2}`);
+  editScore();
 
   if (player1 === 5){
     console.log("You win the game!");
