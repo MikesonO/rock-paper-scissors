@@ -37,45 +37,43 @@ function playRound(Player1, Player2) {
     return "Tie!"
   } else if (playerSelection == "rock") { //Player1 - ROCK
     if (computerSelection == "paper") {
-      player2 ++;
+      player2++;
       return "You Lose! Paper beats Rock"
     } else if (computerSelection == "scissors") {
-      player1 ++;
+      player1++;
       return "You Win! Rock beats Scissors"
     }
   } else if (playerSelection == "paper") { //Player1 - PAPER
     if (computerSelection == "rock") {
-      player1 ++;
+      player1++;
       return "You Win! Paper beats Rock"
     } else if (computerSelection == "scissors") {
-      player2 ++;
+      player2++;
       return "You Lose! Scissors beats Paper"
     }
   } else if (playerSelection == "scissors") { //Player1 - SCISSORS
     if (computerSelection == "rock") {
-      player2 ++;
+      player2++;
       return "You Lose! Rock beats Scissors"
     } else if (computerSelection == "paper") {
-      player1 ++;
+      player1++;
       return "You Win! Scissors beats Paper"
     }
   }
-
 }
 
-function game(){
-  for (var i = 0; i < 5; i++){
+function game() {
+  for (var i = 0; i < 5; i++) {
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
     console.log(playRound(i));
     console.log(`Player 1 score: ${player1}`);
     console.log(`Player 2 score: ${player2}`);
   }
-
   
-  if(player1 > player2){
+  if (player1 > player2) {
     console.log("You win the game!");
-  } else if (player2 > player1){
+  } else if (player2 > player1) {
     console.log("You lose the game!");
   } else {
     console.log("No Contest!");
@@ -83,4 +81,3 @@ function game(){
 }
 
 game();
-
