@@ -1,7 +1,9 @@
 let player1 = 0;
 let player2 = 0;
+let round = 1;
 let playerSelection = null;
 let computerSelection = null;
+
 
 function getComputerChoice() {
 
@@ -66,15 +68,17 @@ function playRound(Player1, Player2) {
 }
 
 function game() {
+  console.log(`Round ${round++}`);
   console.log(playRound(playerSelection, computerSelection));
   console.log(`Player 1 score: ${player1}`);
   console.log(`Player 2 score: ${player2}`);
 
-  if (player1 > player2) {
-    console.log("You win the game!");
-  } else if (player2 > player1) {
-    console.log("You lose the game!");
-  } else {
-    console.log("No Contest!");
-  }
+
+  // if (player1 > player2) {
+  //   console.log("You win the game!");
+  // } else if (player2 > player1) {
+  //   console.log("You lose the game!");
+  // } else {
+  //   console.log("No Contest!");
+  // }
 }
