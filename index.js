@@ -8,6 +8,8 @@ const option = document.querySelectorAll(".rps-btn");
 const restart = document.querySelector("#restart-btn");
 let player1Score = document.querySelector("#player1");
 let player2Score = document.querySelector("#player2");
+let gameText = document.querySelector("#game-text");
+let gameRound = document.querySelector("#game-round");
 
 //Gets Player 2 Choice (Computer)
 function getComputerChoice() {
@@ -78,6 +80,8 @@ restart.addEventListener("click", () => {
   round = 1;
   player1Score.textContent = "Player Score: 0";
   player2Score.textContent = "Computer Score: 0";
+  gameText.textContent = "First to 5 Points Wins!";
+  gameRound.textContent = "Round: 1";
   option.forEach(button => {
     button.disabled = false;
   })
@@ -99,17 +103,15 @@ function disableOption() {
 
 //Main Game Function
 function game() {
-  if (player1)
-
-    console.log(`Round ${round++}`);
-  console.log(playRound(playerSelection, computerSelection));
+  gameRound.textContent = (`Round: ${round++}`);
+  gameText.textContent = playRound(playerSelection, computerSelection);
   editScore();
 
   if (player1 === 5) {
-    console.log("You win the game!");
+    gameText.textContent = "You Win The game!";
     disableOption();
   } else if (player2 === 5) {
     disableOption();
-    console.log("You lose the game!");
+    gameText.textContent = "You Lose The Game!";
   }
 }
