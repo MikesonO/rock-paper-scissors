@@ -16,20 +16,23 @@ function getComputerChoice() {
   }
 }
 
-function getPlayerChoice(playerChoice = prompt("Rock, Paper or Scissors?").toLowerCase()) {
+option = document.querySelectorAll(".rps-btn")
+option.forEach(button => {
+  button.addEventListener("click", () => {
+    playerSelection = button.id;
+    if (playerSelection === "rock") {
+      console.log("rock");
+    } else if (playerSelection === "paper") {
+      console.log("paper");
+    } else if (playerSelection === "scissors") {
+      console.log("scissors");
+    }
+    computerSelection = getComputerChoice();
+    console.log(computerSelection);
 
-  if (playerChoice === "rock") {
-    return "rock";
-  } else if (playerChoice === "paper") {
-    return "paper";
-  } else if (playerChoice === "scissors") {
-    return "scissors";
-  } else {
-    alert("This choice is invalid!");
-    return getPlayerChoice();
-  }
-
-}
+    game();
+  })
+});
 
 function playRound(Player1, Player2) {
 
@@ -63,14 +66,10 @@ function playRound(Player1, Player2) {
 }
 
 function game() {
-  for (var i = 0; i < 5; i++) {
-    playerSelection = getPlayerChoice();
-    computerSelection = getComputerChoice();
-    console.log(playRound(i));
-    console.log(`Player 1 score: ${player1}`);
-    console.log(`Player 2 score: ${player2}`);
-  }
-  
+  console.log(playRound(playerSelection, computerSelection));
+  console.log(`Player 1 score: ${player1}`);
+  console.log(`Player 2 score: ${player2}`);
+
   if (player1 > player2) {
     console.log("You win the game!");
   } else if (player2 > player1) {
@@ -79,5 +78,3 @@ function game() {
     console.log("No Contest!");
   }
 }
-
-game();
