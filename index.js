@@ -67,11 +67,26 @@ function playRound(Player1, Player2) {
   }
 }
 
+function gameReset(){
+  player1 = 0;
+  player2 = 0;
+  round = 1;
+}
+
 function game() {
   console.log(`Round ${round++}`);
   console.log(playRound(playerSelection, computerSelection));
   console.log(`Player 1 score: ${player1}`);
   console.log(`Player 2 score: ${player2}`);
+
+  if (player1 === 5){
+    console.log("You win the game!");
+    gameReset();
+  } else if (player2 === 5){
+    console.log ("You lose the game!");
+    gameReset();
+  } 
+
 
 
   // if (player1 > player2) {
