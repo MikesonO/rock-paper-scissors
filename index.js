@@ -60,13 +60,15 @@ function tie(p1Animation, p2Animation){
   sprite2.src=`./images/${p2Animation}.gif`;
   sprite1_reset("ryu-stance");
   sprite2_reset("ken-stance");
+  return;
 }
 
 function p1Lose(p1Animation,p2Animation){
   sprite1.src=`./images/${p1Animation}.gif`;
       sprite2.src=`./images/${p2Animation}.gif`;
       sprite1_reset("ryu-stance");
-      sprite2_reset("ken-stance")
+      sprite2_reset("ken-stance");
+      return;
 }
 
 
@@ -74,22 +76,11 @@ function p1Win(p1Animation,p2Animation){
       sprite1.src=`./images/${p1Animation}.gif`;
       sprite2.src=`./images/${p2Animation}.gif`;
       sprite1_reset("ryu-stance");
-      sprite2_reset("ken-stance")
+      sprite2_reset("ken-stance");
+      return;
 }
 
-function youWin(p1Animation,p2Animation){
-  sprite1.src=`./images/${p1Animation}.gif`;
-  sprite2.src=`./images/${p2Animation}.gif`;
-  sprite1_reset("ryu-stance");
-}
-
-function youLose(p1Animation,p2Animation){
-  sprite1.src=`./images/${p1Animation}.gif`;
-  sprite2.src=`./images/${p2Animation}.gif`;
-  sprite2_reset("ken-stance");
-}
-
-//Plays 1 Round and Increments Player Score
+//Plays 1 Round and Increments Score
 function playRound(Player1, Player2) {
 
   if (playerSelection == computerSelection) {
@@ -134,8 +125,8 @@ restart.addEventListener("click", () => {
   player2 = 0;
   round = 1;
   sprite1.src="./images/ryu-stance.gif";
-  player1Score.textContent = "Player Score: 0";
-  player2Score.textContent = "Computer Score: 0";
+  player1Score.textContent = "Score: 0";
+  player2Score.textContent = "Score: 0";
   gameText.textContent = "First to 5 Wins!";
   gameRound.textContent = "Round: 1";
   option.forEach(button => {
@@ -146,8 +137,8 @@ restart.addEventListener("click", () => {
 
 //Edits The Score Text
 function editScore() {
-  player1Score.textContent = `Player Score: ${player1}`
-  player2Score.textContent = `Computer Score: ${player2}`
+  player1Score.textContent = `Score: ${player1}`
+  player2Score.textContent = `Score: ${player2}`
 }
 
 //Disables Buttons
@@ -169,7 +160,6 @@ function game() {
     gameText.textContent = "You Win The game!";
     disableOption();
   } else if (player2 === 5) {
-    youLose("mie","ken-punch");
     disableOption();
     gameText.textContent = "You Lose The Game!";
   }
