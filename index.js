@@ -97,7 +97,8 @@ function editScore() {
 //Disables Buttons
 function disableOption() {
   option.forEach(button => {
-    button.disabled = true
+    button.disabled = true;
+    removeProperty = 
   })
 }
 
