@@ -12,19 +12,37 @@
 
 <body>
   <div class="game-container">
-    <h1 id="game-title">Rock, Paper, Scissors?</h1>
-    <h2 id="game-text">First to 5 Points Wins!</h2>
-    <h2 id="game-round">Round: 1</h2>
-    <div class="scores">
+
+    <div class="game-info">
+      <h1 id="game-title">Rock, Paper, Scissors?</h1>
+      <h2 id="game-text">First to 5 Points Wins!</h2>
+      <h2 id="game-round">Round: 1</h2>
+   </div>
+
+    <div class="players">
+      <!-- PLAYER 1 -->
+    <div class="player1"> 
       <p class="score" id="player1">Player Score: 0</p>
-      <p class="score" id="player2">Computer Score: 0</p>
-    </div>
     <div class="game-buttons">
       <button class="rps-btn" id="rock">Rock</button>
       <button class="rps-btn" id="paper">Paper</button>
       <button class="rps-btn" id="scissors">Scisssors</button>
     </div>
+    </div>
+    <!-- PLAYER 2 -->
+    <div class="player2">
+      <p class="score" id="player2">Computer Score: 0</p>
+    <div class="game-buttons">
+      <button class="rps-btn" id="rock">Rock</button>
+      <button class="rps-btn" id="paper">Paper</button>
+      <button class="rps-btn" id="scissors">Scisssors</button>
+    </div>
+  </div>
+  </div>
+  
+    <div class="restart">
     <button id="restart-btn">Restart</button>
+  </div>
   </div>
   <script src="index.js"></script>
 </body>
