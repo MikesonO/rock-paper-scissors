@@ -4,7 +4,8 @@ let player2 = 0;
 let round = 1;
 let playerSelection = null;
 let computerSelection = null;
-const option = document.querySelectorAll(".rps-btn");
+const option = document.querySelectorAll(".player1 .rps-btn");
+const option2 = document.querySelectorAll(".player2 .rps-btn");
 const restart = document.querySelector("#restart-btn");
 let player1Score = document.querySelector("#player1");
 let player2Score = document.querySelector("#player2");
@@ -12,6 +13,11 @@ let gameText = document.querySelector("#game-text");
 let gameRound = document.querySelector("#game-round");
 let sprite1 = document.querySelector(".sprite1");
 let sprite2 = document.querySelector(".sprite2");
+let compRock = document.querySelector(".player2 #rock");
+let compPaper = document.querySelector(".player2 #paper");
+let compScissors = document.querySelector(".player2 #scissors");
+
+console.log(compRock);
 
 //Gets Player 2 Choice (Computer)
 function getComputerChoice() {
@@ -52,6 +58,9 @@ function sprite1_reset(url){
 function sprite2_reset(url){
   setTimeout(function() {
     sprite2.src = `./images/${url}.gif`
+    compRock.disabled = true;
+    compPaper.disabled = true;
+    compScissors.disabled = true;
 }, 1250);
 }
 
@@ -88,30 +97,36 @@ function playRound(Player1, Player2) {
     return "Tie!";
   } else if (playerSelection == "rock") { //Player1 - Rock
     if (computerSelection == "paper") {
+      compPaper.disabled = false;
       p1Lose("ryu-fall","ken-punch");
       player2++;
       return "You Lose! Paper beats Rock"
     } else if (computerSelection == "scissors") {
+      compScissors.disabled = false;
       p1Win("ryu-punch","ken-fall");
       player1++;
       return "You Win! Rock beats Scissors"
     }
   } else if (playerSelection == "paper") { //Player1 - Paper
     if (computerSelection == "rock") {
+      compRock.disabled = false;
       p1Win("ryu-punch","ken-fall");
       player1++;
       return "You Win! Paper beats Rock"
     } else if (computerSelection == "scissors") {
+      compScissors.disabled = false;
       p1Lose("ryu-fall","ken-punch");
       player2++;
       return "You Lose! Scissors beats Paper"
     }
   } else if (playerSelection == "scissors") { //Player1 - Scissors
     if (computerSelection == "rock") {
+      compRock.disabled = false;
       p1Lose("ryu-fall","ken-punch");
       player2++;
       return "You Lose! Rock beats Scissors"
     } else if (computerSelection == "paper") {
+      compPaper.disabled = false;
       p1Win("ryu-punch","ken-fall");
       player1++;
       return "You Win! Scissors beats Paper"

@@ -17,7 +17,7 @@ body{
   align-items: center;
   flex-direction: column;
   width: 75vw;
-  height: 100vh;
+  height: 110vh;
   margin: 0 auto;
   text-align: center;
 }
@@ -32,10 +32,13 @@ body{
 
 .player1,
 .player2 {
-  width: 400px;
-  height: 250px;
+  padding:50px;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 5px solid #fff;
+}
+
+.sprite1, .sprite2{
+  margin: 1.75rem;
 }
 
 .score{
@@ -93,18 +96,37 @@ body{
 .rps-btn:disabled {
   background: #BAB9B9;
   cursor: auto;
-
 }
+
 
 .rps-img {
   width: 70%;
 }
 
+#restart-btn{
+  position: absolute;
+  font-size: 1.75em;;
+  font-family: 'Press Start 2P', cursive;
+  background-color: transparent;
+  color:white;
+  border:none;
+  cursor:pointer;
+  bottom: -2.5%;
+}
+
+#restart-btn:active{
+  color:#BAB9B9;
+
+}
 #game-round{
   margin: 2.5rem 0;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1163px) {
+  .game-container{
+    height: 225vh;
+  }
+
   .players {
     flex-wrap: wrap;
   }
@@ -114,5 +136,9 @@ body{
   .versus {
     width: 50vw;
     margin-bottom: 4rem;
+  }
+
+  #restart-btn{
+    bottom: -115%;
   }
 }
