@@ -4,19 +4,51 @@
 }
 
 
+
+
 .game-container{
   display: flex;
-  justify-content: space-between;
-  text-align: center;
+  justify-content: center;
+ align-items: center;
   flex-direction: column;
   width: 75vw;
   height: 100vh;
   margin: 0 auto;
+  text-align: center;
 }
 
 .players{
   display: flex;
   justify-content: space-around;
-  text-align: center;
-  
+  align-items: center;
+  gap: 20px;
+  margin: 15% 0;
 }
+
+.player1, .player2{
+  width: 400px;
+  height: 250px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.versus{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.versus-img{
+  width: 100px;
+}
+
+
+@media screen and (max-width: 1000px){
+  .players{
+    flex-wrap: wrap;
+  }
+
+  .player1, .player2, .versus{
+    width:50vw;
+  }
+}
+  
