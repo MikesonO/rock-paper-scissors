@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -6,10 +6,10 @@
 
 
 
-.game-container{
+.game-container {
   display: flex;
   justify-content: center;
- align-items: center;
+  align-items: center;
   flex-direction: column;
   width: 75vw;
   height: 100vh;
@@ -17,7 +17,7 @@
   text-align: center;
 }
 
-.players{
+.players {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -25,28 +25,30 @@
   margin: 15% 0;
 }
 
-.player1, .player2{
+.player1,
+.player2 {
   width: 400px;
   height: 250px;
   border-radius: 10px;
   border: 1px solid black;
 }
 
-.versus{
+.versus {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.versus-img{
+
+.versus-img {
   width: 100px;
 }
 
-.flip{
+.flip {
   transform: scaleX(-1);
 }
 
 
-.rps-btn{
+.rps-btn {
   font-family: 'Work Sans', sans-serif;
   display: inline-block;
   border: 0;
@@ -58,44 +60,45 @@
   height: 2em;
   font-size: 2em;
   outline: none;
-  border-bottom: 0.15em solid rgba(0,0,0,0.5);
+  border-bottom: 0.15em solid rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 
-.rps-btn:active{
+.rps-btn:active {
   border-bottom: 0.15em solid transparent;
   transform: scale(0.9);
 }
 
-.red{
+.red {
   background: red;
 }
 
-.white{
+.white {
   background: white;
 }
 
-.blue{
+.blue {
   background-color: blue;
 }
 
-.rps-btn:disabled{
+.rps-btn:disabled {
   background: #BAB9B9;
   cursor: auto;
 
 }
 
-.rps-img{
+.rps-img {
   width: 70%;
 }
 
-@media screen and (max-width: 1000px){
-  .players{
+@media screen and (max-width: 1000px) {
+  .players {
     flex-wrap: wrap;
   }
 
-  .player1, .player2, .versus{
-    width:50vw;
+  .player1,
+  .player2,
+  .versus {
+    width: 50vw;
   }
 }
-  
