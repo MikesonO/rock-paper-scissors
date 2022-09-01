@@ -6,17 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <!-- CSS LINK -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <div class="background">
   <div class="game-container">
 
     <div class="game-info">
       <h1 id="game-title">Rock, Paper, Scissors?</h1>
       <h2 id="game-round">Round: 1</h2>
-      <h2 id="game-text">First to 5 Points Wins!</h2>
+      <h2 id="game-text">First to 5 Wins!</h2>
     </div>
 
     <div class="players">
@@ -24,7 +29,7 @@
       <div class="player1">
         <h1>Player 1</h1>
         <p class="score" id="player1">Score: 0</p>
-        <img class="animation" src="./images/ryu-stance.gif">
+        <img class="sprite1" src="./images/ryu-stance.gif">
         <div class="game-buttons">
           <button class="rps-btn red" id="rock"><img src="./images/rock.png" class="rps-img"></button>
           <button class="rps-btn white" id="paper"><img src="./images/paper.png" class="rps-img"></button>
@@ -38,7 +43,7 @@
       <div class="player2">
         <h1>Computer</h1>
         <p class="score" id="player2">Score: 0</p>
-        <img class="animation flip" src="./images/ken-stance.gif">
+        <img class="sprite2 flip" src="./images/ken-stance.gif">
         <div class="game-buttons">
           <button class="rps-btn red" id="rock"><img src="./images/rock.png" class="rps-img"></button>
           <button class="rps-btn white" id="paper"><img src="./images/paper.png" class="rps-img"></button>
@@ -51,6 +56,7 @@
       <button id="restart-btn">Restart</button>
     </div>
   </div>
+</div>
   <script src="index.js"></script>
 </body>
 
