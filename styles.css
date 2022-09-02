@@ -3,14 +3,15 @@
   padding: 0;
 }
 
+/* ELEMENT SELECTORS */
 body{
   font-family: 'Press Start 2P', cursive;
   background-color: #000;
   color: #fff;
+  margin-top: -1.563rem;
 }
 
-
-
+/* CLASS SELECTORS */
 .game-container {
   display: flex;
   justify-content: center;
@@ -64,7 +65,7 @@ body{
   font-family: 'Work Sans', sans-serif;
   display: inline-block;
   border: 0;
-  background: #BAB9B9;
+  background:  #ccc;
   color: #000;
   font-weight: 600;
   border-radius: 2em;
@@ -82,19 +83,19 @@ body{
 }
 
 .red {
-  background: red;
+  background: #f00;
 }
 
 .white {
-  background: white;
+  background: #fff;
 }
 
 .blue {
-  background-color: blue;
+  background-color: #00f;
 }
 
 .rps-btn:disabled {
-  background: #BAB9B9;
+  background: #ccc;
   cursor: auto;
 }
 
@@ -103,21 +104,38 @@ body{
   width: 70%;
 }
 
+.copyright{
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.copyright:hover, .logo:hover{
+  color: #ccc;
+}
+
+.logo{
+  width: 22.5px;
+}
+
+/* ID SELECTORS */
 #restart-btn{
-  position: absolute;
-  font-size: 1.75em;;
+
+  font-size: 1.75em;
   font-family: 'Press Start 2P', cursive;
   background-color: transparent;
   color:white;
   border:none;
   cursor:pointer;
-  bottom: -2.5%;
+
 }
 
 #restart-btn:active{
-  color:#BAB9B9;
-
+  color:#ccc;
+  transform: scale(0.9);
 }
+
 #game-round{
   margin: 2.5rem 0;
 }

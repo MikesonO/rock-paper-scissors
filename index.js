@@ -49,85 +49,92 @@ option.forEach(button => {
   })
 });
 
-function sprite1_reset(url){
-  setTimeout(function() {
+//Resets Player 1 to default animation after 1.25 Seconds
+function sprite1_reset(url) {
+  setTimeout(function () {
     sprite1.src = `./images/${url}.gif`
-}, 1250);
+  }, 1250); //Set Time
 }
 
-function sprite2_reset(url){
-  setTimeout(function() {
+//Resets Player 2 to default animation after 1.25 Seconds
+function sprite2_reset(url) {
+  setTimeout(function () {
     sprite2.src = `./images/${url}.gif`
     compRock.disabled = true;
     compPaper.disabled = true;
     compScissors.disabled = true;
-}, 1250);
+  }, 1250); //Set Time
 }
 
-function tie(p1Animation, p2Animation){
-  sprite1.src=`./images/${p1Animation}.gif`;
-  sprite2.src=`./images/${p2Animation}.gif`;
+//Plays Win Animation
+function p1Win(p1Animation, p2Animation) {
+  sprite1.src = `./images/${p1Animation}.gif`;
+  sprite2.src = `./images/${p2Animation}.gif`;
   sprite1_reset("ryu-stance");
   sprite2_reset("ken-stance");
   return;
 }
 
-function p1Lose(p1Animation,p2Animation){
-  sprite1.src=`./images/${p1Animation}.gif`;
-      sprite2.src=`./images/${p2Animation}.gif`;
-      sprite1_reset("ryu-stance");
-      sprite2_reset("ken-stance");
-      return;
+//Plays Lose Animation
+function p1Lose(p1Animation, p2Animation) {
+  sprite1.src = `./images/${p1Animation}.gif`;
+  sprite2.src = `./images/${p2Animation}.gif`;
+  sprite1_reset("ryu-stance");
+  sprite2_reset("ken-stance");
+  return;
+}
+
+//Plays Tie Animation
+function tie(p1Animation, p2Animation) {
+  sprite1.src = `./images/${p1Animation}.gif`;
+  sprite2.src = `./images/${p2Animation}.gif`;
+  sprite1_reset("ryu-stance");
+  sprite2_reset("ken-stance");
+  return;
 }
 
 
-function p1Win(p1Animation,p2Animation){
-      sprite1.src=`./images/${p1Animation}.gif`;
-      sprite2.src=`./images/${p2Animation}.gif`;
-      sprite1_reset("ryu-stance");
-      sprite2_reset("ken-stance");
-      return;
-}
+
 
 //Plays 1 Round and Increments Score
 function playRound(Player1, Player2) {
 
   if (playerSelection == computerSelection) {
-    tie("ryu-taunt","ken-taunt");
+    tie("ryu-taunt", "ken-taunt");
     return "Tie!";
   } else if (playerSelection == "rock") { //Player1 - Rock
     if (computerSelection == "paper") {
       compPaper.disabled = false;
-      p1Lose("ryu-fall","ken-punch");
+      p1Lose("ryu-fall", "ken-punch");
       player2++;
       return "You Lose! Paper beats Rock"
     } else if (computerSelection == "scissors") {
       compScissors.disabled = false;
-      p1Win("ryu-punch","ken-fall");
+      p1Win("ryu-punch", "ken-fall");
       player1++;
       return "You Win! Rock beats Scissors"
     }
   } else if (playerSelection == "paper") { //Player1 - Paper
     if (computerSelection == "rock") {
       compRock.disabled = false;
-      p1Win("ryu-punch","ken-fall");
+      p1Win("ryu-punch", "ken-fall");
       player1++;
       return "You Win! Paper beats Rock"
     } else if (computerSelection == "scissors") {
       compScissors.disabled = false;
-      p1Lose("ryu-fall","ken-punch");
+      p1Lose("ryu-fall", "ken-punch");
       player2++;
       return "You Lose! Scissors beats Paper"
     }
   } else if (playerSelection == "scissors") { //Player1 - Scissors
     if (computerSelection == "rock") {
       compRock.disabled = false;
-      p1Lose("ryu-fall","ken-punch");
+      p1Lose("ryu-fall", "ken-punch");
       player2++;
       return "You Lose! Rock beats Scissors"
     } else if (computerSelection == "paper") {
       compPaper.disabled = false;
-      p1Win("ryu-punch","ken-fall");
+      p1Win("ryu-punch", "ken-fall");
       player1++;
       return "You Win! Scissors beats Paper"
     }
@@ -139,7 +146,7 @@ restart.addEventListener("click", () => {
   player1 = 0;
   player2 = 0;
   round = 1;
-  sprite1.src="./images/ryu-stance.gif";
+  sprite1.src = "./images/ryu-stance.gif";
   player1Score.textContent = "Score: 0";
   player2Score.textContent = "Score: 0";
   gameText.textContent = "First to 5 Wins!";
@@ -166,7 +173,7 @@ function disableOption() {
 
 //Main Game Function
 function game() {
-  sprite1.src="./images/ryu-stance.gif";
+  sprite1.src = "./images/ryu-stance.gif";
   gameRound.textContent = (`Round: ${round++}`);
   gameText.textContent = playRound(playerSelection, computerSelection);
   editScore();
