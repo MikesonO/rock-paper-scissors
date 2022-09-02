@@ -27,7 +27,7 @@ body{
   justify-content: space-around;
   align-items: center;
   gap: 20px;
-  margin: 8% 0;
+  margin: 5% 0;
 }
 
 .player1,
@@ -76,7 +76,7 @@ body{
   cursor: pointer;
 }
 
-.rps-btn:active {
+.player1 .rps-btn:active {
   border-bottom: 0.15em solid transparent;
   transform: scale(0.9);
 }
