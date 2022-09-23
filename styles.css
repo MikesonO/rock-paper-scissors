@@ -1,14 +1,24 @@
+/* COLOR VARIRABLES */
+:root {
+  --red: #FF0000;
+  --blue: #0000FF;
+  --white: #FFFFFF;
+  --gray: #CCCCCC;
+  --black: #000000;
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* ELEMENT SELECTORS */
-body{
+body {
   font-family: 'Press Start 2P', cursive;
-  background-color: #000;
-  color: #fff;
-  margin-top: -1.563rem;
+  background-color: var(--black);
+  color: var(--white);
+  height: 100vh;
 }
 
 /* CLASS SELECTORS */
@@ -17,10 +27,17 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 75vw;
-  height: 110vh;
+  width: 100vw;
   margin: 0 auto;
   text-align: center;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+.game-info{
+  display:flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .players {
@@ -28,22 +45,45 @@ body{
   justify-content: space-around;
   align-items: center;
   gap: 20px;
-  margin: 5% 0;
 }
+
+.p1-info,
+.p2-info{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.p1-info h1,
+.p2-info h1{
+  font-size: 1.75rem;
+}
+
 
 .player1,
 .player2 {
-  padding:50px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
   border-radius: 10px;
-  border: 5px solid #fff;
+  border: 5px solid var(--white);
+  height: fit-content;
+  width: 350px;
 }
 
-.sprite1, .sprite2{
-  margin: 1.75rem;
+.sprite1,
+.sprite2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
 }
 
-.score{
-  margin-top: 1.5rem;
+.sprite-container{
+  position: relative;
+  height: 175px;
 }
 
 .versus {
@@ -65,16 +105,18 @@ body{
   font-family: 'Work Sans', sans-serif;
   display: inline-block;
   border: 0;
-  background:  #ccc;
-  color: #000;
+  background: var(--gray);
+  color: var(--black);
   font-weight: 600;
   border-radius: 2em;
-  width: 2em;
-  height: 2em;
+  width: 1.75em;
+  height: 1.75em;
   font-size: 2em;
   outline: none;
-  border-bottom: 0.15em solid rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  box-shadow: inset 0px 33px 25px 0 #000, 
+  
+  
 }
 
 .player1 .rps-btn:active {
@@ -83,19 +125,19 @@ body{
 }
 
 .red {
-  background: #f00;
+  background: var(--red);
 }
 
 .white {
-  background: #fff;
+  background: var(--white);
 }
 
 .blue {
-  background-color: #00f;
+  background-color: var(--blue);
 }
 
 .rps-btn:disabled {
-  background: #ccc;
+  background: var(--gray);
   cursor: auto;
 }
 
@@ -104,46 +146,43 @@ body{
   width: 70%;
 }
 
-.copyright{
+.copyright {
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
   text-align: center;
   padding: 10px;
+  font-size: .75rem;
+  position:absolute;
 }
 
-.copyright:hover, .logo:hover{
-  color: #ccc;
+.copyright:hover,
+.logo:hover {
+  color: var(--gray);
 }
 
-.logo{
+.logo {
   width: 22.5px;
 }
 
 /* ID SELECTORS */
-#restart-btn{
+#restart-btn {
 
-  font-size: 1.75em;
+  font-size: 1.5em;
   font-family: 'Press Start 2P', cursive;
   background-color: transparent;
-  color:white;
-  border:none;
-  cursor:pointer;
+  color: var(--white);
+  border: none;
+  cursor: pointer;
 
 }
 
-#restart-btn:active{
-  color:#ccc;
+#restart-btn:active {
+  color: var(--gray);
   transform: scale(0.9);
 }
 
-#game-round{
-  margin: 2.5rem 0;
-}
-
 @media screen and (max-width: 1163px) {
-  .game-container{
-    height: 225vh;
-  }
+
 
   .players {
     flex-wrap: wrap;
@@ -152,11 +191,10 @@ body{
   .player1,
   .player2,
   .versus {
-    width: 50vw;
+    width: 90%;
+    min-width: 200px;
     margin-bottom: 4rem;
   }
 
-  #restart-btn{
-    bottom: -115%;
-  }
+
 }

@@ -31,9 +31,13 @@
     <div class="players">
       <!-- PLAYER 1 -->
       <div class="player1">
-        <h1 class="p1-title">Player 1</h1>
-        <p class="score" id="player1">Score: 0</p>
-        <img class="sprite1" src="./images/ryu-stance.gif">
+        <div class="p1-info">
+          <h1>Player 1</h1>
+          <p class="score" id="player1">Score: 0</p>
+        </div>
+        <div class="sprite-container">
+          <img class="sprite1" src="./images/ryu-stance.gif">
+        </div>
         <div class="game-buttons">
           <button class="rps-btn red" id="rock"><img src="./images/rock-active.png" class="rps-img"></button>
           <button class="rps-btn white" id="paper"><img src="./images/paper-active.png" class="rps-img"></button>
@@ -45,9 +49,13 @@
       </div>
       <!-- PLAYER 2 -->
       <div class="player2">
-        <h1 class="player2-title">Computer</h1>
-        <p class="score" id="player2">Score: 0</p>
-        <img class="sprite2 flip" src="./images/ken-stance.gif">
+        <div class="p2-info">
+          <h1>Computer</h1>
+          <p class="score" id="player2">Score: 0</p>
+        </div>
+        <div class="sprite-container">
+          <img class="sprite2 flip" src="./images/ken-stance.gif">
+        </div>
         <div class="game-buttons">
           <button class="rps-btn red" id="rock" disabled><img src="./images/rock.png" class="rps-img"></button>
           <button class="rps-btn white" id="paper" disabled><img src="./images/paper.png" class="rps-img"></button>
